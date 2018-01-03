@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">    
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
+    <title>Kate Boyd: Front End Developer</title>       
+  </head>
+  <body>
+    <div id="app">
+      <section class="top">
+        <div class="menu"></div>
+        <div class="top-split">
+          <div class="top-left">
+            <h1>Hello!</h1>
+            <h2>I'm Kate.</h2>
+          </div>
+          <div class="top-right">
+            <p class="large-bold">I'm a front end developer who has won awards, been the first hire at a startup, and taken products from idea to app store. I love working with code and people.</p>
+            <p class="medium-bold">I'm seeking roles that are either remote or in Denver, CO.</p>
+          </div>
+        </div>
+      </section>
+      <section class="works">
+        <div class="header-box">
+          <h3>Works</h3>
+          <div class="header-border" data-aos="fade-right" data-aos-duration="600"></div>
+        </div>
+        <div class="project-box" v-for="project in projects" :key="project.id">
+          <div class="project-img" data-aos="fade-right" v-bind:style="{ backgroundImage: 'url(/img/' + project.image + ')'}"
+          :class="{ meteor : project.image === 'meteor.gif'}">
+          </div>
+          <div class="project-desc" data-aos="fade-left" data-aos-delay="100">
+            <h4>{{project.name}}</h4>
+            <p class="desc-text">{{project.description}}</p>
+            <p v-if="project.awards" class="awards-title">Awards</p>
+            <ul v-if="project.awards" class="awards-list">
+              <li v-for="award of project.awards" :key="award">{{award}}</li>
+            </ul>
+            <div class="button-row">
+              <a v-for="badge of project.badges"
+              :key="badge.alt" class="app-link" target="_blank" :href="badge.link" :alt="badge.alt"><img :src="'/img/' + badge.image" :alt="badge.alt"></a>
+              <a v-if="project.link" :href="project.link" alt="Project" target="_blank"><button class="project-button">VISIT PROJECT</button></a>
+              <a v-if="project.repo" :href="project.repo" alt="GitHub" target="_blank"><button class="project-button">GITHUB REPO</button></a>
+              <a v-if="project.docs" :href="project.docs" alt="API docs" target="_blank"><button class="project-button">VISIT API DOCS</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="header-box">
+          <h3>About</h3>
+          <div class="header-border" data-aos="fade-left" data-aos-duration="600"></div>
+        </div>
+        <div class="about-split">
+          <div class="about-box" data-aos="fade-right" data-aos-duration="600">
+            <p class="about-text">I graduated from UNC-Chapel Hill with a degree in Multimedia and Japanese in May 2017. I love JavaScript, Angular, Vue, Cordova, and good old HTML and CSS. I'm looking for a job where I can stretch those skills. Let's connect!</p>
+            <h5>Want to know more?</h5>
+            <ul>
+              <li>
+                <a>Download my resume</a>
+              </li>
+              <li>
+                <a href="http://podcast.womenintechshow.com/df04d003" target="_blank">Hear me as a guest on the Women in Tech podcast</a>
+              </li>
+              <li>
+                <a href="https://github.com/kwboyd" target="_blank">Check out my GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/kate-w-boyd-718229109/" target="_blank">Visit my LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+          <div class="about-photo" data-aos="fade-left" data-aos-duration="600"></div>
+        </div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>       
+    <script type="text/javascript" src="vue.min.js"></script> 
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> 
+    <script type="text/javascript" src="script.js"></script> 
+  </body>
+</html>
