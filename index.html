@@ -13,7 +13,6 @@
     <div id="app">
 
       <section class="top">
-        <div class="menu"></div>
         <div class="top-split">
           <div class="top-left">
             <h1>Hello!</h1>
@@ -33,10 +32,11 @@
         </div>
         <!-- begin for loop for each project -->
         <div class="project-box" v-for="project in projects" :key="project.id">
-          <div class="project-img" data-aos="fade-right" v-bind:style="{ backgroundImage: 'url(/img/' + project.image + ')'}"
-          :class="{ meteor : project.image === 'meteor.gif'}">
-          </div>
+          <a alt="project.name" target="_blank" :href="project.name === 'Sideline Fantasy Sports' ? 'https://playsideline.com' : project.link" class="project-img" data-aos="fade-right" v-bind:style="{ backgroundImage: 'url(/img/' + project.image + ')'}"
+          :class="{ meteor : project.image === 'meteor.gif', sideline: project.image === 'sideline.png'}">
+          </a>
           <!-- meteor project is a gif so it gets its own styles -->
+          <!-- sideline gets scooted over on mobile -->
           <div class="project-desc" data-aos="fade-left" data-aos-delay="100">
             <h4>{{project.name}}</h4>
             <p class="desc-text">{{project.description}}</p>
@@ -67,7 +67,7 @@
             <h5>Want to know more?</h5>
             <ul>
               <li>
-                <a>Download my resume</a>
+                <a alt="Resume" href="Boyd_resume.pdf" target="_blank">Download my resume</a>
               </li>
               <li>
                 <a href="http://podcast.womenintechshow.com/df04d003" target="_blank">Hear me as a guest on the Women in Tech podcast</a>
