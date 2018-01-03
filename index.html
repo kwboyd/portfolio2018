@@ -11,6 +11,7 @@
   </head>
   <body>
     <div id="app">
+
       <section class="top">
         <div class="menu"></div>
         <div class="top-split">
@@ -19,20 +20,23 @@
             <h2>I'm Kate.</h2>
           </div>
           <div class="top-right">
-            <p class="large-bold">I'm a front end developer who has won awards, been the first hire at a startup, and taken products from idea to app store. I love working with code and people.</p>
-            <p class="medium-bold">I'm seeking roles that are either remote or in Denver, CO.</p>
+            <p class="tagline">I'm a front end developer who has won awards, been the first hire at a startup, and taken products from idea to app store. I love working with code and people.</p>
+            <p class="tagline-sub">I'm seeking roles that are either remote or in Denver, CO.</p>
           </div>
         </div>
       </section>
+
       <section class="works">
         <div class="header-box">
           <h3>Works</h3>
           <div class="header-border" data-aos="fade-right" data-aos-duration="600"></div>
         </div>
+        <!-- begin for loop for each project -->
         <div class="project-box" v-for="project in projects" :key="project.id">
           <div class="project-img" data-aos="fade-right" v-bind:style="{ backgroundImage: 'url(/img/' + project.image + ')'}"
           :class="{ meteor : project.image === 'meteor.gif'}">
           </div>
+          <!-- meteor project is a gif so it gets its own styles -->
           <div class="project-desc" data-aos="fade-left" data-aos-delay="100">
             <h4>{{project.name}}</h4>
             <p class="desc-text">{{project.description}}</p>
@@ -49,7 +53,9 @@
             </div>
           </div>
         </div>
+        <!-- end for loop of projects -->
       </section>
+
       <section class="about">
         <div class="header-box">
           <h3>About</h3>
@@ -78,6 +84,7 @@
         </div>
       </section>
     </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>       
     <script type="text/javascript" src="vue.min.js"></script> 
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> 
