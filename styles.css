@@ -5,6 +5,14 @@
   margin: 0;
 }
 
+.loader {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: calc(50vh - 25px);
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,11 +25,14 @@
   background-size: contain;
   background-position: 0 0;
   padding-bottom: 70px;
+  overflow-x: hidden;
+  max-width: 100vw;  
 }
 
 body {
   background-color: #2bad9c;
   width: 100%;
+  max-width: 100vw;    
   overflow-x: hidden;
 }
 
@@ -40,7 +51,7 @@ h1 {
   margin: 0;
   transform: translateX(-500%);
   animation: slideIn .6s forwards;
-  animation-delay: 1s;
+  animation-delay: .5s;
   margin-top: -10px;
 }
 
@@ -49,7 +60,7 @@ h2 {
   margin: 0;
   transform: translateX(-500%);
   animation: slideIn .6s forwards;
-  animation-delay: 1.7s;
+  animation-delay: 1.2s;
 }
  
 .top {
@@ -74,7 +85,7 @@ h2 {
   margin-right: 60px;
   transform: translateX(500px);
   animation: slideIn .6s forwards;
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 
 .top-left {
@@ -148,12 +159,14 @@ h3 {
   position: relative;
   text-decoration: underline;
   text-decoration-color: rgba(218, 215, 28, 0.6);
+  -webkit-text-decoration-color: rgba(218, 215, 28, 0.6);  
   text-decoration-skip: skip;
   -webkit-text-decoration-skip: skip;
 }
 
 .about-box a:hover, .about-box a:active, .about-box a:focus {
   text-decoration-color: rgba(218, 215, 28, 0.9);  
+  -webkit-text-decoration-color: rgba(218, 215, 28, 0.9);    
 }
 
 .about-box li:hover, .about-box li:active, .about-box li:focus {
@@ -229,8 +242,8 @@ h5 {
   overflow: hidden;
   background-size: cover;
   filter: brightness(95%);
+  -webkit-filter: brightness(95%);  
   background-repeat: no-repeat;
-  transition: filter 1s;
 }
 
 .project-img.meteor {
@@ -320,11 +333,12 @@ h4 {
   .top-split {
     flex-direction: column;
     align-items: flex-end;
-    min-height: 700px;
+    min-height: 530px;
+    padding-top: 70px;    
   }
 
   .top {
-    min-height: 700px;
+    min-height: 530px;
   }
 
   .top-left {
