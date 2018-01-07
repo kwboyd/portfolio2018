@@ -2,13 +2,11 @@
 var worksContainer;
 var appContainer;
 var loader;
-var projectsLoaded;
 
 document.addEventListener("DOMContentLoaded", function(event) {
   worksContainer = document.getElementById('works');
   appContainer = document.getElementById('app');
   loader = document.getElementById('loader');
-  projectsLoaded = false;
   AOS.init();
   appendProjects();
   loader.style.display = 'none';
