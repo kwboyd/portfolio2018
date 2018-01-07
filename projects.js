@@ -1,4 +1,4 @@
-[
+var projects = [
   {
     "id": 0,
     "name": "Sideline Fantasy Sports",
